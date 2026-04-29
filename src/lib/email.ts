@@ -1,6 +1,16 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy-init: avoid throwing at module load (build time) when RESEND_API_KEY isn't set.
+let _resend: Resend | null = null;
+function getResend(): Resend {
+  if (_resend) return _resend;
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('Missing RESEND_API_KEY environment variable.');
+  }
+  _resend = new Resend(apiKey);
+  return _resend;
+}
 
 const FROM_EMAIL = process.env.FROM_EMAIL || 'hello@santamonicatailorbybello.com';
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'javier@santamonicatailorbybello.com';
@@ -66,7 +76,7 @@ export async function sendOwnerNotification(data: OwnerNotificationData) {
 </body>
 </html>`;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: `${SITE_NAME} <${FROM_EMAIL}>`,
     to: OWNER_EMAIL,
     subject: `New Appointment Request — ${name}${service ? ` (${service})` : ''}`,
@@ -144,7 +154,7 @@ export async function sendClientConfirmation(data: ClientConfirmationData) {
 </body>
 </html>`;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: `${SITE_NAME} <${FROM_EMAIL}>`,
     to: email,
     subject: `Your Appointment Request — ${SITE_NAME}`,

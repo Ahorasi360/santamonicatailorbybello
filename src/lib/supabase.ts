@@ -1,26 +1,48 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// ─── ENV ACCESSORS (read on demand, not at module load) ────────────────────────
+// Reading env at module load breaks `next build` when env vars aren't set yet
+// (e.g., on a fresh Vercel project before the env tab is configured).
 
-// Client-side Supabase client (uses anon key)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-// Server-side Supabase client (uses service role key — only use in API routes/server components)
-export function createServerSupabaseClient() {
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-  return createClient(supabaseUrl, serviceRoleKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  });
+function requireEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(
+      `Missing required environment variable: ${name}. ` +
+      `Set it in your .env.local (dev) or Vercel project settings (production).`
+    );
+  }
+  return value;
 }
 
-// Server-side admin client (bypasses RLS — only use in API routes)
-export const supabaseAdmin = createServerSupabaseClient();
+// ─── CLIENT-SIDE (anon key, RLS-protected) ─────────────────────────────────────
+let _browserClient: SupabaseClient | null = null;
 
-// Database types
+export function getSupabaseBrowser(): SupabaseClient {
+  if (_browserClient) return _browserClient;
+  _browserClient = createClient(
+    requireEnv('NEXT_PUBLIC_SUPABASE_URL'),
+    requireEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
+  );
+  return _browserClient;
+}
+
+// ─── SERVER-SIDE (service role key, bypasses RLS — API routes ONLY) ────────────
+export function createServerSupabaseClient(): SupabaseClient {
+  return createClient(
+    requireEnv('NEXT_PUBLIC_SUPABASE_URL'),
+    requireEnv('SUPABASE_SERVICE_ROLE_KEY'),
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    }
+  );
+}
+
+// ─── DATABASE TYPES ────────────────────────────────────────────────────────────
+// NOTE: `status` values must match the CHECK constraint in supabase/schema.sql.
 export interface BookingRecord {
   id?: number;
   name: string;
@@ -37,7 +59,8 @@ export interface BookingRecord {
   utm_term?: string;
   utm_content?: string;
   referrer?: string;
-  consultation_type?: string;
-  status?: 'new' | 'contacted' | 'confirmed' | 'completed' | 'cancelled';
+  status?: 'new' | 'contacted' | 'booked' | 'completed' | 'cancelled';
+  notes?: string;
   created_at?: string;
+  updated_at?: string;
 }

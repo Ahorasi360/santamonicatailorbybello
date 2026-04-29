@@ -111,31 +111,33 @@ export default function Navbar() {
                 Services <ChevronDown size={10} className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {servicesOpen && (
-                <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 py-2"
-                  style={{
-                    background: 'oklch(9% 0.005 240)',
-                    border: '1px solid oklch(95% 0.01 85 / 0.08)',
-                    boxShadow: '0 20px 40px oklch(0% 0 0 / 0.5)',
-                  }}
-                >
-                  {SERVICES.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="block px-5 py-2.5 transition-colors duration-150 no-underline"
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.7rem',
-                        letterSpacing: '0.08em',
-                        color: 'oklch(85% 0.005 240)',
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(73% 0.08 75)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(85% 0.005 240)')}
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                  <div
+                    className="w-56 py-2"
+                    style={{
+                      background: 'oklch(9% 0.005 240)',
+                      border: '1px solid oklch(95% 0.01 85 / 0.08)',
+                      boxShadow: '0 20px 40px oklch(0% 0 0 / 0.5)',
+                    }}
+                  >
+                    {SERVICES.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="block px-5 py-2.5 transition-colors duration-150 no-underline"
+                        style={{
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '0.7rem',
+                          letterSpacing: '0.08em',
+                          color: 'oklch(85% 0.005 240)',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(73% 0.08 75)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(85% 0.005 240)')}
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -164,31 +166,33 @@ export default function Navbar() {
                 Areas We Serve <ChevronDown size={10} className={`transition-transform duration-200 ${areasOpen ? 'rotate-180' : ''}`} />
               </button>
               {areasOpen && (
-                <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 py-2"
-                  style={{
-                    background: 'oklch(9% 0.005 240)',
-                    border: '1px solid oklch(95% 0.01 85 / 0.08)',
-                    boxShadow: '0 20px 40px oklch(0% 0 0 / 0.5)',
-                  }}
-                >
-                  {AREAS.map((a) => (
-                    <Link
-                      key={a.href}
-                      href={a.href}
-                      className="block px-5 py-2.5 transition-colors duration-150 no-underline"
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.7rem',
-                        letterSpacing: '0.08em',
-                        color: 'oklch(85% 0.005 240)',
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(73% 0.08 75)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(85% 0.005 240)')}
-                    >
-                      {a.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                  <div
+                    className="w-52 py-2"
+                    style={{
+                      background: 'oklch(9% 0.005 240)',
+                      border: '1px solid oklch(95% 0.01 85 / 0.08)',
+                      boxShadow: '0 20px 40px oklch(0% 0 0 / 0.5)',
+                    }}
+                  >
+                    {AREAS.map((a) => (
+                      <Link
+                        key={a.href}
+                        href={a.href}
+                        className="block px-5 py-2.5 transition-colors duration-150 no-underline"
+                        style={{
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '0.7rem',
+                          letterSpacing: '0.08em',
+                          color: 'oklch(85% 0.005 240)',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'oklch(73% 0.08 75)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'oklch(85% 0.005 240)')}
+                      >
+                        {a.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

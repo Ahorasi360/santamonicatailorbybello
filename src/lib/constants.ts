@@ -3,7 +3,7 @@ export const SITE_NAME = 'Santa Monica Tailor by Bello';
 export const PHONE = '+1 (424) 301-0146';
 export const PHONE_RAW = '+14243010146';
 export const ADDRESS = '724 Santa Monica Blvd, Santa Monica, CA 90401';
-export const EMAIL = 'hello@santamonicatailorbybello.com';
+export const EMAIL = 'javierbello689@gmail.com';
 export const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=724+Santa+Monica+Blvd,+Santa+Monica,+CA+90401';
 export const GOOGLE_REVIEW_URL = 'https://g.page/r/santamonicatailorbybello/review';
 

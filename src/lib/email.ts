@@ -12,8 +12,16 @@ function getResend(): Resend {
   return _resend;
 }
 
-const FROM_EMAIL = process.env.FROM_EMAIL || 'hello@santamonicatailorbybello.com';
-const OWNER_EMAIL = process.env.OWNER_EMAIL || 'javier@santamonicatailorbybello.com';
+// FROM_EMAIL must be on a Resend-verified sending domain or Resend will reject.
+// Default falls back to the verified MS360 domain used across the agency.
+const FROM_EMAIL = process.env.FROM_EMAIL || 'leads@out.multiservicios360.net';
+// OWNER_EMAIL supports a comma-separated list so you can notify multiple
+// recipients (e.g., flashpreviews@gmail.com,javierbello689@gmail.com) without
+// any code change — update the Vercel env var and redeploy.
+const OWNER_EMAILS = (process.env.OWNER_EMAIL || 'flashpreviews@gmail.com')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
 const SITE_NAME = 'Santa Monica Tailor by Bello';
 
 // ─── OWNER NOTIFICATION ────────────────────────────────────────────────────────
@@ -78,7 +86,7 @@ export async function sendOwnerNotification(data: OwnerNotificationData) {
 
   return getResend().emails.send({
     from: `${SITE_NAME} <${FROM_EMAIL}>`,
-    to: OWNER_EMAIL,
+    to: OWNER_EMAILS,
     subject: `New Appointment Request — ${name}${service ? ` (${service})` : ''}`,
     html,
   });
@@ -146,7 +154,7 @@ export async function sendClientConfirmation(data: ClientConfirmationData) {
     <a href="tel:+14243010146" class="cta">+1 (424) 301-0146</a>
     <div class="contact">
       <p>724 Santa Monica Blvd · Santa Monica, CA 90401</p>
-      <p>Mon–Fri 9am–6pm · Sat 10am–5pm</p>
+      <p>Mon–Fri 8:30am–6pm · Sat 9am–5pm</p>
       <p><a href="https://www.santamonicatailorbybello.com">santamonicatailorbybello.com</a></p>
     </div>
     <p class="footer">${SITE_NAME} · All rights reserved</p>

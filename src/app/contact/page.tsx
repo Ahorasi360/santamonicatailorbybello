@@ -62,7 +62,7 @@ export default function ContactPage() {
                   {[
                     { label: 'Address', content: ADDRESS, href: GOOGLE_MAPS_URL },
                     { label: 'Phone', content: PHONE, href: `tel:${PHONE_RAW}` },
-                    { label: 'Email', content: 'hello@santamonicatailorbybello.com', href: 'mailto:hello@santamonicatailorbybello.com' },
+                    { label: 'Email', content: 'javierbello689@gmail.com', href: 'mailto:javierbello689@gmail.com' },
                     { label: 'Walk-Ins', content: 'Welcome during business hours', href: null },
                   ].map(({ label, content, href }) => (
                     <div key={label} className="p-6" style={{ border: '1px solid oklch(95% 0.01 85 / 0.07)', background: 'oklch(10% 0.005 240)' }}>

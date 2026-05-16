@@ -30,10 +30,11 @@ export async function POST(req: NextRequest) {
     // Get referrer from headers
     const referrer = req.headers.get('referer') || undefined;
 
-    // Insert into Supabase
+    // Insert into Supabase (per-site table — matches the convention of the
+    // other agency clients: marvistalaw_leads, flashpreviews_leads, etc.)
     const supabase = createServerSupabaseClient();
     const { data, error } = await supabase
-      .from('bookings')
+      .from('bello_bookings')
       .insert([{
         name: name.trim(),
         email: email?.trim() || null,
@@ -50,6 +51,7 @@ export async function POST(req: NextRequest) {
         utm_content: utm_content || null,
         referrer: referrer || null,
         status: 'new',
+        source: 'santamonicatailorbybello.com',
       }])
       .select()
       .single();

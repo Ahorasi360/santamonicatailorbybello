@@ -14,7 +14,7 @@
     "react-dom": "^18.3.1",
     "@supabase/supabase-js": "^2.45.4",
     "resend": "^4.0.0",
-    "openai": "^4.67.3",
+    "@anthropic-ai/sdk": "^0.96.0",
     "lucide-react": "^0.453.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4",

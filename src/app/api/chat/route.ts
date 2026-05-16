@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import Anthropic from '@anthropic-ai/sdk';
 
 const SYSTEM_PROMPT = `You are the luxury concierge assistant for Santa Monica Tailor by Bello, a premier tailoring studio located at 724 Santa Monica Blvd, Santa Monica, CA 90401.
 
@@ -37,6 +38,10 @@ TONE: Warm, knowledgeable, and refined. You represent a luxury brand. Be helpful
 
 When a client is ready to book, direct them to: /booking or suggest they call +1 (424) 301-0146.`;
 
+const MODEL = 'claude-haiku-4-5-20251001';
+
+type ChatMessage = { role: 'user' | 'assistant'; content: string };
+
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
@@ -45,40 +50,41 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid messages' }, { status: 400 });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
       return NextResponse.json({ error: 'AI service not configured' }, { status: 503 });
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          ...messages.slice(-10), // Keep last 10 messages for context
-        ],
-        max_tokens: 500,
-        temperature: 0.7,
-      }),
-    });
+    // Anthropic Messages API takes system as a top-level field (not a message).
+    // Keep the last 10 turns and drop any non-user/assistant roles defensively.
+    const turns: ChatMessage[] = (messages as Array<{ role?: string; content?: string }>)
+      .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.length > 0)
+      .slice(-10)
+      .map((m) => ({ role: m.role as 'user' | 'assistant', content: m.content as string }));
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('[Chat API] OpenAI error:', err);
-      return NextResponse.json({ error: 'AI service error' }, { status: 502 });
+    if (turns.length === 0) {
+      return NextResponse.json({ error: 'Invalid messages' }, { status: 400 });
     }
 
-    const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content;
+    const client = new Anthropic({ apiKey });
+
+    const response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 500,
+      system: SYSTEM_PROMPT,
+      messages: turns,
+    });
+
+    const firstBlock = response.content[0];
+    const reply = firstBlock && firstBlock.type === 'text' ? firstBlock.text : '';
 
     return NextResponse.json({ reply }, { status: 200 });
   } catch (err) {
     console.error('[Chat API] Unexpected error:', err);
+    // If Anthropic SDK threw a known API error, surface 502 to distinguish from internal bugs
+    if (err && typeof err === 'object' && 'status' in err) {
+      return NextResponse.json({ error: 'AI service error' }, { status: 502 });
+    }
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

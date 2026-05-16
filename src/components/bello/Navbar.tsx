@@ -12,6 +12,7 @@ const SERVICES = [
   { label: 'Garment Care & Repairs', href: '/services/garment-care-repairs' },
   { label: "Men's Tailoring", href: '/services/mens-tailoring-alterations' },
   { label: 'Luxury Brand Alterations', href: '/services/luxury-brand-alterations' },
+  { label: "Women's Tailoring", href: '/services/womens-tailoring-alterations' },
 ];
 
 const AREAS = [

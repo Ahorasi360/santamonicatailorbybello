@@ -20,6 +20,7 @@ SERVICES:
 4. Garment Care & Repairs — button replacement, zipper repair, reweaving, relining
 5. Men's Tailoring & Alterations — trousers, shirts, jackets, full wardrobe
 6. Luxury Brand Alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss
+7. Women's Tailoring & Alterations — dresses, blazers, trousers, skirts, coats, evening wear, and full alterations on luxury women's brands (same houses: Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss). Javier is an expert with both men's and women's garments.
 
 CONSULTATION TIERS:
 - The Fitting — standard consultation, alterations and adjustments

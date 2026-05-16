@@ -13,6 +13,7 @@ const SERVICES_OPTIONS = [
   'Garment Care & Repairs',
   "Men's Tailoring",
   'Luxury Brand Alterations',
+  "Women's Tailoring & Alterations",
   'Other / Not Sure',
 ];
 

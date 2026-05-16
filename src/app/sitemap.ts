@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'garment-care-repairs',
     'mens-tailoring-alterations',
     'luxury-brand-alterations',
+    'womens-tailoring-alterations',
   ].map((slug) => ({
     url: `${BASE_URL}/services/${slug}`,
     lastModified: now,

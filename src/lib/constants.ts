@@ -29,6 +29,7 @@ export const SERVICES_LIST = [
   { label: 'Garment Care & Repairs', href: '/services/garment-care-repairs', img: IMAGES.garmentCare },
   { label: "Men's Tailoring", href: '/services/mens-tailoring-alterations', img: IMAGES.portfolio1 },
   { label: 'Luxury Brand Alterations', href: '/services/luxury-brand-alterations', img: IMAGES.portfolio2 },
+  { label: "Women's Tailoring", href: '/services/womens-tailoring-alterations', img: IMAGES.portfolio3 },
 ];
 
 export const AREAS_LIST = [
@@ -109,6 +110,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garment Care & Repairs' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Men's Tailoring & Alterations" } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Luxury Brand Alterations' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Women's Tailoring & Alterations" } },
     ],
   },
 };

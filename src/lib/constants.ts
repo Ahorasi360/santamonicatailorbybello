@@ -48,6 +48,12 @@ export const HOURS = [
   { days: 'Sunday', time: 'Closed' },
 ];
 
+export const HOURS_BRIEF = 'Mon–Fri 8:30am–6pm · Sat 9am–5pm';
+
+export const TRAVEL_FEE = 250;
+export const TRAVEL_FEE_TEXT =
+  'In-studio fittings have no travel fee. House calls within our service area are available with a $250 travel fee on top of the standard service charge.';
+
 export const LOCAL_BUSINESS_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',

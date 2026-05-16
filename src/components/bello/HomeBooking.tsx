@@ -82,7 +82,7 @@ export default function HomeBooking() {
               +1 (424) 301-0146
             </a>
             <div className="mt-8 pt-8" style={{ borderTop: '1px solid oklch(95% 0.01 85 / 0.08)' }}>
-              {[{ label: 'Address', value: '724 Santa Monica Blvd, Santa Monica, CA 90401' }, { label: 'Hours', value: 'Mon–Fri 8:30am–6pm · Sat 9am–5pm' }].map(({ label, value }) => (
+              {[{ label: 'Address', value: '724 Santa Monica Blvd, Santa Monica, CA 90401' }, { label: 'Hours', value: 'Mon–Fri 8:30am–6pm · Sat 9am–5pm' }, { label: 'Fittings', value: 'In-studio: no travel fee. House calls within our service area: $250 travel fee added to the service.' }].map(({ label, value }) => (
                 <div key={label} className="mb-4">
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75 / 0.7)' }}>{label}</p>
                   <p className="text-gray-bello mt-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem' }}>{value}</p>

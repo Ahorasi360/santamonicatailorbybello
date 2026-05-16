@@ -39,7 +39,7 @@ const SERVICE_SCHEMA = {
   url: `${SITE_URL}/services/custom-suits-santa-monica`,
 };
 
-const FEATURES = ["Full bespoke pattern creation", "Premium Italian and English fabric selection", "Hand-stitched lapels and buttonholes", "Multiple fitting appointments", "Lifetime alteration guarantee"];
+const FEATURES = ["Full bespoke pattern creation", "Premium Italian and English fabric selection", "Hand-stitched lapels and buttonholes", "Multiple fitting appointments"];
 
 export default function ServicePage() {
   return (

@@ -86,6 +86,9 @@ export default function ContactPage() {
                       <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8rem', color: 'oklch(55% 0.005 240)' }}>{time}</span>
                     </div>
                   ))}
+                  <p className="mt-5 pt-4" style={{ borderTop: '1px solid oklch(95% 0.01 85 / 0.05)', fontFamily: 'var(--font-sans)', fontSize: '0.72rem', lineHeight: 1.7, color: 'oklch(58% 0.005 240)' }}>
+                    In-studio fittings have no travel fee. House calls within our service area are available with a $250 travel fee on top of the standard service charge.
+                  </p>
                 </div>
 
                 <Link href="/booking" className="btn-gold mt-8 inline-flex">

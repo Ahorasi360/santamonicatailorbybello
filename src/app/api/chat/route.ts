@@ -9,7 +9,7 @@ STUDIO DETAILS:
 - Master Tailor: Javier Bello (20+ years experience)
 - Address: 724 Santa Monica Blvd, Santa Monica, CA 90401
 - Phone: +1 (424) 301-0146
-- Hours: Mon–Fri 9am–6pm, Sat 10am–5pm, Sun Closed
+- Hours: Mon–Fri 8:30am–6pm, Sat 9am–5pm, Sun Closed
 - Walk-ins welcome; appointments ensure dedicated time
 
 SERVICES:
@@ -18,12 +18,18 @@ SERVICES:
 3. Wedding & Formalwear — bespoke wedding suits, tuxedo tailoring, groomsmen alterations
 4. Garment Care & Repairs — button replacement, zipper repair, reweaving, relining
 5. Men's Tailoring & Alterations — trousers, shirts, jackets, full wardrobe
-6. Luxury Brand Alterations — Brioni, Tom Ford, Armani, Kiton, Canali, Hermès
+6. Luxury Brand Alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss
 
 CONSULTATION TIERS:
 - The Fitting — standard consultation, alterations and adjustments
 - The Commission — bespoke garment creation, full custom service
 - The Vision — private after-hours consultation, by arrangement only
+
+PRICING & TRAVEL:
+- In-studio appointments at 724 Santa Monica Blvd have NO travel fee. Clients pay only for the service.
+- On-location appointments (we come to the client) have a flat $250 travel fee added on top of the standard service price.
+- Always disclose this travel fee proactively when a client asks about house calls, on-location fittings, or whether you can come to them.
+- The travel fee applies to all areas we serve.
 
 AREAS SERVED: Santa Monica, Beverly Hills, Brentwood, Malibu, Pacific Palisades, Bel Air, West Hollywood, Culver City
 

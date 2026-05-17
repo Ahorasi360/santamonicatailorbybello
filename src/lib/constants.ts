@@ -5,7 +5,10 @@ export const PHONE_RAW = '+14243010146';
 export const ADDRESS = '724 Santa Monica Blvd, Santa Monica, CA 90401';
 export const EMAIL = 'javierbello689@gmail.com';
 export const GOOGLE_MAPS_URL = 'https://www.google.com/maps?cid=17307317260568994331';
-export const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJT0EShsmkwoARGyIzs1nxL_A';
+// CID-based review URL — opens the Google listing where users tap "Write a review".
+// The /local/writereview?placeid= format intermittently 404s in some browsers, so
+// using this format which has worked reliably on other agency sites.
+export const GOOGLE_REVIEW_URL = 'https://www.google.com/maps?cid=17307317260568994331&hl=en';
 export const GOOGLE_PLACE_ID = 'ChIJT0EShsmkwoARGyIzs1nxL_A';
 // Aggregate rating across Google (4.5 / ~112) + Yelp (4.7 / ~115). Update quarterly.
 export const REVIEW_RATING = 4.6;

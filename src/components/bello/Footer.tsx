@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { GOOGLE_REVIEW_URL, REVIEW_RATING, REVIEW_COUNT, GOOGLE_MAPS_URL, INSTAGRAM_URL, YELP_URL } from '@/lib/constants';
 
 const SERVICES = [
   { label: 'Custom Suits', href: '/services/custom-suits-santa-monica' },
@@ -73,16 +74,39 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Google review link */}
+            {/* Google review CTA */}
             <a
-              href="https://g.page/r/santamonicatailorbybello/review"
+              href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-5 no-underline"
               style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75)' }}
             >
-              ★ Leave a Google Review
+              ★ {REVIEW_RATING} on Google · {REVIEW_COUNT}+ Reviews
             </a>
+            <div className="flex items-center gap-4 mt-4">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
+                className="no-underline"
+                style={{ fontFamily: 'var(--font-sans)', fontSize: '0.7rem', letterSpacing: '0.1em', color: 'oklch(65% 0.005 240)' }}
+              >
+                Instagram
+              </a>
+              <span style={{ color: 'oklch(45% 0.005 240)' }}>·</span>
+              <a
+                href={YELP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="See us on Yelp"
+                className="no-underline"
+                style={{ fontFamily: 'var(--font-sans)', fontSize: '0.7rem', letterSpacing: '0.1em', color: 'oklch(65% 0.005 240)' }}
+              >
+                Yelp
+              </a>
+            </div>
           </div>
 
           {/* Services */}
@@ -136,7 +160,7 @@ export default function Footer() {
               <div>
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75 / 0.7)', marginBottom: '4px' }}>Address</p>
                 <a
-                  href="https://maps.google.com/?q=724+Santa+Monica+Blvd,+Santa+Monica,+CA+90401"
+                  href={GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="no-underline"

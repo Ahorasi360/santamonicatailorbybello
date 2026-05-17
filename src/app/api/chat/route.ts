@@ -16,11 +16,17 @@ STUDIO DETAILS:
 SERVICES:
 1. Custom Suits — fully bespoke, from fabric selection to final fitting
 2. Suit Alterations — jacket tapering, trouser hemming, sleeve shortening, full resizing
-3. Wedding & Formalwear — bespoke wedding suits, tuxedo tailoring, groomsmen alterations
-4. Garment Care & Repairs — button replacement, zipper repair, reweaving, relining
+3. Wedding & Formalwear — bespoke wedding suits, tuxedo tailoring, groomsmen alterations, bridal and wedding dress alterations
+4. Garment Care & Repairs — button replacement, zipper repair, reweaving, relining, leather repair
 5. Men's Tailoring & Alterations — trousers, shirts, jackets, full wardrobe
-6. Luxury Brand Alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss
-7. Women's Tailoring & Alterations — dresses, blazers, trousers, skirts, coats, evening wear, and full alterations on luxury women's brands (same houses: Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss). Javier is an expert with both men's and women's garments.
+6. Luxury Brand Alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, Hugo Boss
+7. Women's Tailoring & Alterations — bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and full alterations on luxury women's brands (same houses listed above). Javier is an expert with both men's and women's garments.
+
+ADDITIONAL OFFERINGS:
+- Group fittings (e.g., bridal parties, wedding parties, corporate teams)
+- After-hours private appointments by arrangement
+- Corporate appointments for businesses with multiple employees
+- ASL proficient for deaf/hard-of-hearing clients
 
 CONSULTATION TIERS:
 - The Fitting — standard consultation, alterations and adjustments
@@ -32,6 +38,14 @@ PRICING & TRAVEL:
 - On-location appointments (we come to the client) have a flat $250 travel fee added on top of the standard service price.
 - Always disclose this travel fee proactively when a client asks about house calls, on-location fittings, or whether you can come to them.
 - The travel fee applies to all areas we serve.
+
+SPECIALTY APPOINTMENTS:
+- Bridal and wedding dress alterations are a core specialty
+- Group fittings for wedding parties / groomsmen
+- Corporate appointments for busy professionals (we accommodate executive schedules)
+- Private after-hours consultations by arrangement
+- ASL-proficient staff on-site — Deaf and hard-of-hearing clients welcome
+- Walk-ins welcome during business hours for standard alterations; appointments recommended for bridal, custom, suit fittings, group fittings, and after-hours work
 
 AREAS SERVED: Santa Monica, Beverly Hills, Brentwood, Malibu, Pacific Palisades, Bel Air, West Hollywood, Culver City
 

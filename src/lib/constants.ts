@@ -4,8 +4,14 @@ export const PHONE = '+1 (424) 301-0146';
 export const PHONE_RAW = '+14243010146';
 export const ADDRESS = '724 Santa Monica Blvd, Santa Monica, CA 90401';
 export const EMAIL = 'javierbello689@gmail.com';
-export const GOOGLE_MAPS_URL = 'https://maps.google.com/?q=724+Santa+Monica+Blvd,+Santa+Monica,+CA+90401';
-export const GOOGLE_REVIEW_URL = 'https://g.page/r/santamonicatailorbybello/review';
+export const GOOGLE_MAPS_URL = 'https://www.google.com/maps?cid=17307317260568994331';
+export const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJT0EShsmkwoARGyIzs1nxL_A';
+export const GOOGLE_PLACE_ID = 'ChIJT0EShsmkwoARGyIzs1nxL_A';
+// Aggregate rating across Google (4.5 / ~112) + Yelp (4.7 / ~115). Update quarterly.
+export const REVIEW_RATING = 4.6;
+export const REVIEW_COUNT = 227;
+export const INSTAGRAM_URL = 'https://www.instagram.com/santamonicatailor';
+export const YELP_URL = 'https://www.yelp.com/biz/santa-monica-tailor-by-bello-santa-monica-16';
 
 export const IMAGES = {
   hero: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp',
@@ -78,17 +84,24 @@ export const LOCAL_BUSINESS_SCHEMA = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 34.0195,
-    longitude: -118.4912,
+    latitude: 34.0191723,
+    longitude: -118.4915754,
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: REVIEW_RATING,
+    reviewCount: REVIEW_COUNT,
+    bestRating: 5,
+    worstRating: 1,
   },
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '18:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '17:00' },
   ],
   sameAs: [
-    'https://www.yelp.com/biz/santa-monica-tailor-by-bello',
-    'https://www.instagram.com/santamonicatailorbybello',
-    'https://www.facebook.com/santamonicatailorbybello',
+    `https://www.google.com/maps?cid=17307317260568994331`,
+    'https://www.yelp.com/biz/santa-monica-tailor-by-bello-santa-monica-16',
+    'https://www.instagram.com/santamonicatailor',
   ],
   areaServed: [
     { '@type': 'City', name: 'Santa Monica' },

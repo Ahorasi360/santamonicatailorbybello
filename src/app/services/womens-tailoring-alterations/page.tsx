@@ -6,11 +6,11 @@ import { SITE_URL, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: "Women's Tailoring & Alterations Santa Monica | Santa Monica Tailor by Bello",
-  description: "Expert women's tailoring and alterations in Santa Monica. Dresses, blazers, trousers, skirts, coats, and luxury brand alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Hugo Boss.",
+  description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and luxury brand alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, Hugo Boss.",
   alternates: { canonical: `${SITE_URL}/services/womens-tailoring-alterations` },
   openGraph: {
     title: "Women's Tailoring & Alterations Santa Monica | Santa Monica Tailor by Bello",
-    description: "Expert women's tailoring and alterations in Santa Monica. Dresses, blazers, trousers, skirts, coats, and luxury brand alterations from Brioni to Hugo Boss.",
+    description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and luxury brand alterations from Brioni to Hugo Boss.",
     url: `${SITE_URL}/services/womens-tailoring-alterations`,
     images: [{ url: IMAGES.portfolio3, width: 1200, height: 630, alt: "Women's Tailoring & Alterations Santa Monica" }],
   },
@@ -20,7 +20,7 @@ const SERVICE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: "Women's Tailoring & Alterations",
-  description: "Expert women's tailoring and alterations in Santa Monica. Dresses, blazers, trousers, skirts, coats, evening wear, and luxury women's brand alterations.",
+  description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and luxury women's brand alterations.",
   provider: {
     '@type': 'LocalBusiness',
     name: 'Santa Monica Tailor by Bello',
@@ -40,6 +40,7 @@ const SERVICE_SCHEMA = {
 };
 
 const FEATURES = [
+  'Bridal and wedding dress alterations',
   'Dress hemming, taking-in and resizing',
   'Blazer and jacket alterations',
   'Trouser and pant adjustments',
@@ -81,7 +82,7 @@ export default function ServicePage() {
                   Master tailor Javier Bello brings the same precision and attention to detail to women&apos;s garments as he does to bespoke menswear. With more than two decades of experience, he handles everything from a simple hem to the full restructuring of a couture piece — and works regularly on the world&apos;s most discerning brands.
                 </p>
                 <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Dresses, blazers, trousers, skirts, coats, and evening wear are altered to fit your form with the discretion the garment deserves. For luxury houses — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, and Hugo Boss — we approach the work with the same regard for original construction as the makers themselves. The result is a personal fit on a piece that retains every quality you bought it for.
+                  Dresses, blazers, trousers, skirts, coats, evening wear, and bridal pieces are altered to fit your form with the discretion the garment deserves. For luxury houses — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss — we approach the work with the same regard for original construction as the makers themselves. The result is a personal fit on a piece that retains every quality you bought it for.
                 </p>
                 <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
                   In-studio fittings at 724 Santa Monica Blvd are by appointment or walk-in. For clients who prefer privacy, on-location appointments are available across the Westside; a flat $250 travel fee is added to the standard service charge.

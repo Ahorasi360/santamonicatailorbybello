@@ -92,6 +92,25 @@ export default function ContactPage() {
                   </p>
                 </div>
 
+                {/* Specialty appointments + accessibility */}
+                <div className="mt-6 p-6" style={{ border: '1px solid oklch(95% 0.01 85 / 0.07)', background: 'oklch(10% 0.005 240)' }}>
+                  <p className="text-eyebrow mb-4">Specialty Appointments</p>
+                  <ul className="flex flex-col gap-3">
+                    {[
+                      'Bridal & wedding dress alterations',
+                      'Group fittings for wedding parties',
+                      'Corporate appointments for busy professionals',
+                      'Private after-hours consultations by arrangement',
+                      'ASL-proficient staff on-site',
+                    ].map((line) => (
+                      <li key={line} className="flex items-start gap-3">
+                        <span className="text-gold mt-1" style={{ fontSize: '0.45rem', flexShrink: 0 }}>◆</span>
+                        <span style={{ fontFamily: 'var(--font-sans)', fontSize: '0.78rem', color: 'oklch(65% 0.005 240)', lineHeight: 1.6 }}>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <Link href="/booking" className="btn-gold mt-8 inline-flex">
                   Book an Appointment
                 </Link>

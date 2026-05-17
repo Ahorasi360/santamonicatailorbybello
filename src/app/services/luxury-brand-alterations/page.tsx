@@ -6,11 +6,11 @@ import { SITE_URL } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Luxury Brand Alterations Santa Monica | Santa Monica Tailor by Bello',
-  description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès and Hugo Boss handled with precision.',
+  description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss handled with precision.',
   alternates: { canonical: `${SITE_URL}/services/luxury-brand-alterations` },
   openGraph: {
     title: 'Luxury Brand Alterations Santa Monica | Santa Monica Tailor by Bello',
-    description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès and Hugo Boss handled with precision.',
+    description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss handled with precision.',
     url: `${SITE_URL}/services/luxury-brand-alterations`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-2-new-EwJGzRgo5SAay7ZL9YDPvp.webp', width: 1200, height: 630, alt: 'Luxury Brand Alterations Santa Monica' }],
   },
@@ -20,7 +20,7 @@ const SERVICE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Luxury Brand Alterations',
-  description: 'Expert alterations for Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès and Hugo Boss in Santa Monica.',
+  description: 'Expert alterations for Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss in Santa Monica.',
   provider: {
     '@type': 'LocalBusiness',
     name: 'Santa Monica Tailor by Bello',
@@ -39,7 +39,7 @@ const SERVICE_SCHEMA = {
   url: `${SITE_URL}/services/luxury-brand-alterations`,
 };
 
-const FEATURES = ["Brioni, Zegna and Brunello Cucinelli alterations", "Loro Piana, Kiton and Tom Ford tailoring", "Armani, Canali and Hermès garments", "Hugo Boss alterations and adjustments", "Preservation of original construction"];
+const FEATURES = ["Brioni, Zegna and Brunello Cucinelli alterations", "Loro Piana, Kiton and Tom Ford tailoring", "Armani, Canali and Hermès garments", "Prada, Versace and Gucci alterations", "Ralph Lauren and Burberry adjustments", "Hugo Boss alterations and resizing", "Preservation of original construction"];
 
 export default function ServicePage() {
   return (
@@ -73,7 +73,7 @@ export default function ServicePage() {
                   Luxury garments require luxury-level alterations. At Santa Monica Tailor by Bello, we have extensive experience working with the worlds finest clothing brands.
                 </p>
                 <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  From Brioni, Zegna, and Brunello Cucinelli to Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, and Hugo Boss, we alter luxury garments with the same care and precision as their original makers. Our approach preserves the integrity of the original construction while achieving the fit that transforms a luxury garment into a truly personal piece.
+                  From Brioni, Zegna, and Brunello Cucinelli to Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss, we alter luxury garments with the same care and precision as their original makers. Our approach preserves the integrity of the original construction while achieving the fit that transforms a luxury garment into a truly personal piece.
                 </p>
                 <Link href="/booking" className="btn-gold mt-8 inline-flex">
                   Book an Appointment

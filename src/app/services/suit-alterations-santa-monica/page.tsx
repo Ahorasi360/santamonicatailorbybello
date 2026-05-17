@@ -73,7 +73,7 @@ export default function ServicePage() {
                   Even the finest off-the-rack suit rarely fits perfectly straight from the rack. Expert alterations are what transform a good suit into a great one — and at Santa Monica Tailor by Bello, we have been perfecting that transformation for over 20 years.
                 </p>
                 <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Our alteration services cover everything from simple trouser hemming to complex jacket restructuring. We work with suits from every major luxury house — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, and Hugo Boss — and our alterations are executed with the same precision as our bespoke work.
+                  Our alteration services cover everything from simple trouser hemming to complex jacket restructuring. We work with suits from every major luxury house — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss — and our alterations are executed with the same precision as our bespoke work.
                 </p>
                 <Link href="/booking" className="btn-gold mt-8 inline-flex">
                   Book an Appointment

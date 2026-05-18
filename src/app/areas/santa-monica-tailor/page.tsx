@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL, IMAGES, SERVICES_LIST } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Tailor Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Tailor Santa Monica',
   description: 'Expert tailoring and alterations in Santa Monica. Custom suits, suit alterations, wedding formalwear, and luxury garment care at 724 Santa Monica Blvd.',
   alternates: { canonical: `${SITE_URL}/areas/santa-monica-tailor` },
   openGraph: {
-    title: 'Tailor Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Tailor Santa Monica',
     description: 'Expert tailoring and alterations in Santa Monica. Custom suits, suit alterations, wedding formalwear, and luxury garment care at 724 Santa Monica Blvd.',
     url: `${SITE_URL}/areas/santa-monica-tailor`,
     images: [{ url: IMAGES.hero, width: 1200, height: 630, alt: 'Santa Monica Tailor by Bello serving Santa Monica' }],
@@ -38,6 +39,7 @@ export default function LocationPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Areas We Serve', path: '/#areas' }, { name: 'Santa Monica', path: '/areas/santa-monica-tailor' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '45vh' }}>

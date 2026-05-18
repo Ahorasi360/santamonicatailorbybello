@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Garment Care and Repairs Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Garment Care and Repairs Santa Monica',
   description: 'Expert garment care and repairs in Santa Monica. Restore, repair, and preserve your finest garments with the care they deserve.',
   alternates: { canonical: `${SITE_URL}/services/garment-care-repairs` },
   openGraph: {
-    title: 'Garment Care and Repairs Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Garment Care and Repairs Santa Monica',
     description: 'Expert garment care and repairs in Santa Monica. Restore, repair, and preserve your finest garments with the care they deserve.',
     url: `${SITE_URL}/services/garment-care-repairs`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-garment-care-new-SbkXJCFLwSVdvdacopbh6Y.webp', width: 1200, height: 630, alt: 'Garment Care and Repairs Santa Monica' }],
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Garment Care & Repairs', path: '/services/garment-care-repairs' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

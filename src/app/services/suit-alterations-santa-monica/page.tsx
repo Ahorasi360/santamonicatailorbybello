@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Suit Alterations Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Suit Alterations Santa Monica',
   description: 'Professional suit alterations in Santa Monica. Jacket tapering, trouser hemming, sleeve shortening, and full suit resizing by master tailor Javier Bello.',
   alternates: { canonical: `${SITE_URL}/services/suit-alterations-santa-monica` },
   openGraph: {
-    title: 'Suit Alterations Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Suit Alterations Santa Monica',
     description: 'Professional suit alterations in Santa Monica. Jacket tapering, trouser hemming, sleeve shortening, and full suit resizing by master tailor Javier Bello.',
     url: `${SITE_URL}/services/suit-alterations-santa-monica`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-alterations-new-mc4PxTfLgVaYSLUXguwEEu.webp', width: 1200, height: 630, alt: 'Suit Alterations Santa Monica' }],
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Suit Alterations', path: '/services/suit-alterations-santa-monica' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

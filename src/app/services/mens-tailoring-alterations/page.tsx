@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Mens Tailoring and Alterations Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Mens Tailoring and Alterations Santa Monica',
   description: 'Expert mens tailoring and alterations in Santa Monica. Trousers, shirts, jackets, and full wardrobe alterations by master tailor Javier Bello.',
   alternates: { canonical: `${SITE_URL}/services/mens-tailoring-alterations` },
   openGraph: {
-    title: 'Mens Tailoring and Alterations Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Mens Tailoring and Alterations Santa Monica',
     description: 'Expert mens tailoring and alterations in Santa Monica. Trousers, shirts, jackets, and full wardrobe alterations by master tailor Javier Bello.',
     url: `${SITE_URL}/services/mens-tailoring-alterations`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp', width: 1200, height: 630, alt: 'Mens Tailoring and Alterations Santa Monica' }],
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: "Men's Tailoring", path: '/services/mens-tailoring-alterations' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

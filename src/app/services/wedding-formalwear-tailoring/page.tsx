@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Wedding and Formalwear Tailoring Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Wedding and Formalwear Tailoring Santa Monica',
   description: 'Expert wedding suit tailoring and formalwear alterations in Santa Monica. Ensure your wedding suit, tuxedo, or formal attire fits perfectly for the most important day of your life.',
   alternates: { canonical: `${SITE_URL}/services/wedding-formalwear-tailoring` },
   openGraph: {
-    title: 'Wedding and Formalwear Tailoring Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Wedding and Formalwear Tailoring Santa Monica',
     description: 'Expert wedding suit tailoring and formalwear alterations in Santa Monica. Ensure your wedding suit, tuxedo, or formal attire fits perfectly for the most important day of your life.',
     url: `${SITE_URL}/services/wedding-formalwear-tailoring`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-wedding-new-PNcS2PsTMDqPHXCwBLpVrM.webp', width: 1200, height: 630, alt: 'Wedding and Formalwear Tailoring Santa Monica' }],
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Wedding & Formalwear', path: '/services/wedding-formalwear-tailoring' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL, IMAGES } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: "Women's Tailoring & Alterations Santa Monica | Santa Monica Tailor by Bello",
-  description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and luxury brand alterations — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, Hugo Boss.",
+  title: "Women's Tailoring & Alterations Santa Monica",
+  description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, evening wear, luxury brands.",
   alternates: { canonical: `${SITE_URL}/services/womens-tailoring-alterations` },
   openGraph: {
-    title: "Women's Tailoring & Alterations Santa Monica | Santa Monica Tailor by Bello",
+    title: "Women's Tailoring & Alterations Santa Monica",
     description: "Expert women's tailoring and alterations in Santa Monica. Bridal and wedding dress alterations, dresses, blazers, trousers, skirts, coats, evening wear, and luxury brand alterations from Brioni to Hugo Boss.",
     url: `${SITE_URL}/services/womens-tailoring-alterations`,
     images: [{ url: IMAGES.portfolio3, width: 1200, height: 630, alt: "Women's Tailoring & Alterations Santa Monica" }],
@@ -54,6 +55,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: "Women's Tailoring", path: '/services/womens-tailoring-alterations' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

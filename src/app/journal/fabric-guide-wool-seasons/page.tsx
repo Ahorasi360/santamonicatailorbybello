@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Fabric Guide: Choosing the Right Wool for Every Season | Santa Monica Tailor by Bello',
+  title: 'Fabric Guide: Choosing the Right Wool for Every Season',
   description: 'From lightweight tropical wools to heavy flannels, a practical guide to choosing the right fabric weight for your climate and lifestyle.',
   alternates: { canonical: `${SITE_URL}/journal/fabric-guide-wool-seasons` },
   openGraph: {
-    title: 'Fabric Guide: Choosing the Right Wool for Every Season | Santa Monica Tailor by Bello',
+    title: 'Fabric Guide: Choosing the Right Wool for Every Season',
     description: 'From lightweight tropical wools to heavy flannels, a practical guide to choosing the right fabric weight for your climate and lifestyle.',
     url: `${SITE_URL}/journal/fabric-guide-wool-seasons`,
     type: 'article',
@@ -44,6 +45,7 @@ export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }, { name: 'Fabric Guide', path: '/journal/fabric-guide-wool-seasons' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '45vh' }}>

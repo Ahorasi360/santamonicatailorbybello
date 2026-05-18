@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Bespoke vs Made-to-Measure: What is the Difference? | Santa Monica Tailor by Bello',
+  title: 'Bespoke vs Made-to-Measure: What is the Difference?',
   description: 'Understanding the difference between bespoke, made-to-measure, and off-the-rack tailoring and which is right for you.',
   alternates: { canonical: `${SITE_URL}/journal/bespoke-vs-made-to-measure` },
   openGraph: {
-    title: 'Bespoke vs Made-to-Measure: What is the Difference? | Santa Monica Tailor by Bello',
+    title: 'Bespoke vs Made-to-Measure: What is the Difference?',
     description: 'Understanding the difference between bespoke, made-to-measure, and off-the-rack tailoring and which is right for you.',
     url: `${SITE_URL}/journal/bespoke-vs-made-to-measure`,
     type: 'article',
@@ -44,6 +45,7 @@ export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }, { name: 'Bespoke vs Made-to-Measure', path: '/journal/bespoke-vs-made-to-measure' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '45vh' }}>

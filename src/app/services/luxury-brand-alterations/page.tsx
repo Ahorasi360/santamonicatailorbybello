@@ -3,14 +3,15 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Luxury Brand Alterations Santa Monica | Santa Monica Tailor by Bello',
-  description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss handled with precision.',
+  title: 'Luxury Brand Alterations Santa Monica',
+  description: 'Expert luxury brand alterations in Santa Monica — Brioni, Zegna, Loro Piana, Tom Ford, Kiton, Hermès, and more. Precision work that preserves original construction.',
   alternates: { canonical: `${SITE_URL}/services/luxury-brand-alterations` },
   openGraph: {
-    title: 'Luxury Brand Alterations Santa Monica | Santa Monica Tailor by Bello',
-    description: 'Expert alterations for luxury brands in Santa Monica. Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss handled with precision.',
+    title: 'Luxury Brand Alterations Santa Monica',
+    description: 'Expert luxury brand alterations in Santa Monica — Brioni, Zegna, Loro Piana, Tom Ford, Kiton, Hermès, and more. Precision work that preserves original construction.',
     url: `${SITE_URL}/services/luxury-brand-alterations`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-2-new-EwJGzRgo5SAay7ZL9YDPvp.webp', width: 1200, height: 630, alt: 'Luxury Brand Alterations Santa Monica' }],
   },
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Luxury Brand Alterations', path: '/services/luxury-brand-alterations' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

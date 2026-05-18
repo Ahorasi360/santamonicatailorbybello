@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'How to Care for Your Suit: Storage, Cleaning and Maintenance | Santa Monica Tailor by Bello',
+  title: 'How to Care for Your Suit: Storage, Cleaning and Maintenance',
   description: 'The complete guide to suit care. How to store, clean, press, and maintain your suits so they last for decades.',
   alternates: { canonical: `${SITE_URL}/journal/suit-care-guide` },
   openGraph: {
-    title: 'How to Care for Your Suit: Storage, Cleaning and Maintenance | Santa Monica Tailor by Bello',
+    title: 'How to Care for Your Suit: Storage, Cleaning and Maintenance',
     description: 'The complete guide to suit care. How to store, clean, press, and maintain your suits so they last for decades.',
     url: `${SITE_URL}/journal/suit-care-guide`,
     type: 'article',
@@ -44,6 +45,7 @@ export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }, { name: 'Suit Care Guide', path: '/journal/suit-care-guide' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '45vh' }}>

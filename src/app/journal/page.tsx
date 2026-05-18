@@ -2,12 +2,19 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
-import { SITE_URL, IMAGES } from '@/lib/constants';
+import { SITE_URL, IMAGES, LOCAL_BUSINESS_SCHEMA } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Journal | Tailoring Guides & Style Advice | Santa Monica Tailor by Bello',
+  title: 'Journal | Tailoring Guides & Style Advice',
   description: 'Expert tailoring guides, style advice, and garment care tips from master tailor Javier Bello. Learn how a suit should fit, fabric selection, and more.',
   alternates: { canonical: `${SITE_URL}/journal` },
+  openGraph: {
+    title: 'The Journal — Tailoring Guides & Style Advice',
+    description: 'Expert tailoring guides and style advice from master tailor Javier Bello. Suit fit, fabric selection, alterations, wedding suits, and garment care.',
+    url: `${SITE_URL}/journal`,
+    images: [{ url: IMAGES.hero, width: 1200, height: 630, alt: 'The Journal — Santa Monica Tailor by Bello' }],
+  },
 };
 
 const POSTS = [
@@ -22,6 +29,8 @@ const POSTS = [
 export default function JournalPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="py-16 text-center" style={{ borderBottom: '1px solid oklch(95% 0.01 85 / 0.06)' }}>

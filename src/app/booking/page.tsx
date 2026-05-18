@@ -2,17 +2,25 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import HomeBooking from '@/components/bello/HomeBooking';
-import { SITE_URL } from '@/lib/constants';
+import { SITE_URL, LOCAL_BUSINESS_SCHEMA } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Book an Appointment | Santa Monica Tailor by Bello',
+  title: 'Book an Appointment',
   description: 'Book a tailoring appointment at Santa Monica Tailor by Bello. Custom suits, alterations, wedding formalwear, and luxury garment care. Walk-ins welcome. Call +1 (424) 301-0146.',
   alternates: { canonical: `${SITE_URL}/booking` },
+  openGraph: {
+    title: 'Book an Appointment with Santa Monica Tailor by Bello',
+    description: 'Reserve dedicated time with master tailor Javier Bello. Custom suits, alterations, wedding formalwear, luxury garment care. Walk-ins welcome.',
+    url: `${SITE_URL}/booking`,
+  },
 };
 
 export default function BookingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Book an Appointment', path: '/booking' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <div className="py-12 text-center" style={{ borderBottom: '1px solid oklch(95% 0.01 85 / 0.06)' }}>

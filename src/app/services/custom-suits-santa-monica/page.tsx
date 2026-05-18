@@ -3,13 +3,14 @@ import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
+import { buildBreadcrumb } from '@/lib/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Custom Suits Santa Monica | Santa Monica Tailor by Bello',
+  title: 'Custom Suits Santa Monica',
   description: 'Bespoke custom suits crafted to your exact measurements in Santa Monica. From fabric selection to final fitting, every detail is handled by master tailor Javier Bello.',
   alternates: { canonical: `${SITE_URL}/services/custom-suits-santa-monica` },
   openGraph: {
-    title: 'Custom Suits Santa Monica | Santa Monica Tailor by Bello',
+    title: 'Custom Suits Santa Monica',
     description: 'Bespoke custom suits crafted to your exact measurements in Santa Monica. From fabric selection to final fitting, every detail is handled by master tailor Javier Bello.',
     url: `${SITE_URL}/services/custom-suits-santa-monica`,
     images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-custom-suits-new-3KsFwfc6jLqgK9QyGawHAT.webp', width: 1200, height: 630, alt: 'Custom Suits Santa Monica' }],
@@ -45,6 +46,7 @@ export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Custom Suits', path: '/services/custom-suits-santa-monica' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>

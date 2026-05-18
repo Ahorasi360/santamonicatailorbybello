@@ -4,6 +4,10 @@ import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
 import { buildBreadcrumb } from '@/lib/breadcrumb';
+import { SERVICES } from '@/lib/services-content';
+import ServicePageBody, { buildFaqSchema } from '@/components/bello/ServicePageBody';
+
+const service = SERVICES['suit-alterations-santa-monica'];
 
 export const metadata: Metadata = {
   title: 'Suit Alterations Santa Monica',
@@ -20,8 +24,8 @@ export const metadata: Metadata = {
 const SERVICE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Suit Alterations',
-  description: 'Professional suit alterations in Santa Monica by master tailor Javier Bello.',
+  name: service.serviceSchemaName,
+  description: service.intro,
   provider: {
     '@type': 'LocalBusiness',
     name: 'Santa Monica Tailor by Bello',
@@ -40,13 +44,12 @@ const SERVICE_SCHEMA = {
   url: `${SITE_URL}/services/suit-alterations-santa-monica`,
 };
 
-const FEATURES = ["Jacket tapering and waist suppression", "Sleeve shortening and lengthening", "Trouser hemming and tapering", "Shoulder adjustments", "Full suit resizing"];
-
 export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Suit Alterations', path: '/services/suit-alterations-santa-monica' }])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(service.faqs)) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>
@@ -67,41 +70,8 @@ export default function ServicePage() {
             </h1>
           </div>
         </section>
-        <section className="py-20 lg:py-28" style={{ borderBottom: '1px solid oklch(95% 0.01 85 / 0.06)' }}>
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-              <div className="lg:col-span-2">
-                <p className="text-gray-bello" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Even the finest off-the-rack suit rarely fits perfectly straight from the rack. Expert alterations are what transform a good suit into a great one — and at Santa Monica Tailor by Bello, we have been perfecting that transformation for over 20 years.
-                </p>
-                <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Our alteration services cover everything from simple trouser hemming to complex jacket restructuring. We work with suits from every major luxury house — Brioni, Zegna, Brunello Cucinelli, Loro Piana, Kiton, Tom Ford, Armani, Canali, Hermès, Prada, Versace, Ralph Lauren, Burberry, Gucci, and Hugo Boss — and our alterations are executed with the same precision as our bespoke work.
-                </p>
-                <Link href="/booking" className="btn-gold mt-8 inline-flex">
-                  Book an Appointment
-                </Link>
-              </div>
-              <div>
-                <div className="p-8" style={{ border: '1px solid oklch(95% 0.01 85 / 0.07)', background: 'oklch(10% 0.005 240)' }}>
-                  <p className="text-eyebrow mb-4">What is Included</p>
-                  <ul className="flex flex-col gap-3">
-                    {FEATURES.map((f: string) => (
-                      <li key={f} className="flex items-start gap-3">
-                        <span className="text-gold mt-0.5" style={{ fontSize: '0.45rem', flexShrink: 0 }}>◆</span>
-                        <span className="text-gray-bello" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', lineHeight: 1.6 }}>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8 pt-6" style={{ borderTop: '1px solid oklch(95% 0.01 85 / 0.08)' }}>
-                    <a href="tel:+14243010146" className="no-underline" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75)' }}>
-                      +1 (424) 301-0146
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+        <ServicePageBody service={service} />
       </main>
       <Footer />
     </>

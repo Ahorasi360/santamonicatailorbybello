@@ -4,6 +4,10 @@ import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
 import { buildBreadcrumb } from '@/lib/breadcrumb';
+import { SERVICES } from '@/lib/services-content';
+import ServicePageBody, { buildFaqSchema } from '@/components/bello/ServicePageBody';
+
+const service = SERVICES['wedding-formalwear-tailoring'];
 
 export const metadata: Metadata = {
   title: 'Wedding and Formalwear Tailoring Santa Monica',
@@ -20,8 +24,8 @@ export const metadata: Metadata = {
 const SERVICE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Wedding and Formalwear Tailoring',
-  description: 'Expert wedding suit tailoring and formalwear alterations in Santa Monica.',
+  name: service.serviceSchemaName,
+  description: service.intro,
   provider: {
     '@type': 'LocalBusiness',
     name: 'Santa Monica Tailor by Bello',
@@ -40,13 +44,12 @@ const SERVICE_SCHEMA = {
   url: `${SITE_URL}/services/wedding-formalwear-tailoring`,
 };
 
-const FEATURES = ["Bespoke wedding suit creation", "Off-the-rack wedding suit alterations", "Tuxedo and black-tie tailoring", "Groomsmen suit alterations", "Rush service available"];
-
 export default function ServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Services', path: '/#services' }, { name: 'Wedding & Formalwear', path: '/services/wedding-formalwear-tailoring' }])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(service.faqs)) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>
@@ -67,41 +70,8 @@ export default function ServicePage() {
             </h1>
           </div>
         </section>
-        <section className="py-20 lg:py-28" style={{ borderBottom: '1px solid oklch(95% 0.01 85 / 0.06)' }}>
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-              <div className="lg:col-span-2">
-                <p className="text-gray-bello" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Your wedding day deserves a suit that fits as perfectly as the moment itself. At Santa Monica Tailor by Bello, we specialise in wedding suit tailoring and formalwear alterations.
-                </p>
-                <p className="text-gray-bello mt-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-                  Whether you have purchased a suit off the rack, are working with a designer piece, or want a completely bespoke wedding suit crafted from scratch, we provide the expertise and attention to detail that the occasion demands. We recommend booking your wedding tailoring appointment at least 8 to 12 weeks before the event.
-                </p>
-                <Link href="/booking" className="btn-gold mt-8 inline-flex">
-                  Book an Appointment
-                </Link>
-              </div>
-              <div>
-                <div className="p-8" style={{ border: '1px solid oklch(95% 0.01 85 / 0.07)', background: 'oklch(10% 0.005 240)' }}>
-                  <p className="text-eyebrow mb-4">What is Included</p>
-                  <ul className="flex flex-col gap-3">
-                    {FEATURES.map((f: string) => (
-                      <li key={f} className="flex items-start gap-3">
-                        <span className="text-gold mt-0.5" style={{ fontSize: '0.45rem', flexShrink: 0 }}>◆</span>
-                        <span className="text-gray-bello" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.82rem', lineHeight: 1.6 }}>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8 pt-6" style={{ borderTop: '1px solid oklch(95% 0.01 85 / 0.08)' }}>
-                    <a href="tel:+14243010146" className="no-underline" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75)' }}>
-                      +1 (424) 301-0146
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+        <ServicePageBody service={service} />
       </main>
       <Footer />
     </>

@@ -10,6 +10,12 @@ import HomeConsultation from '@/components/bello/HomeConsultation';
 import HomePortfolio from '@/components/bello/HomePortfolio';
 import HomeBooking from '@/components/bello/HomeBooking';
 import { LOCAL_BUSINESS_SCHEMA, SITE_URL } from '@/lib/constants';
+import { buildReviewSchema } from '@/lib/reviews';
+
+const HOMEPAGE_BUSINESS_SCHEMA = {
+  ...LOCAL_BUSINESS_SCHEMA,
+  review: buildReviewSchema(),
+};
 
 export const metadata: Metadata = {
   title: 'Santa Monica Tailor by Bello | Expert Tailoring & Alterations',
@@ -23,7 +29,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOMEPAGE_BUSINESS_SCHEMA) }}
       />
       <Navbar />
       <main>

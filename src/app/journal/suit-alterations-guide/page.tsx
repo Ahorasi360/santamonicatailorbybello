@@ -4,28 +4,31 @@ import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
 import { buildBreadcrumb } from '@/lib/breadcrumb';
+import { JOURNAL_POSTS } from '@/lib/journal-content';
+
+const post = JOURNAL_POSTS['suit-alterations-guide'];
 
 export const metadata: Metadata = {
-  title: 'The Essential Guide to Suit Alterations',
-  description: 'Which suit alterations are worth doing, which are not, and what every man should know before taking a suit to a tailor.',
+  title: post.title,
+  description: post.description,
   alternates: { canonical: `${SITE_URL}/journal/suit-alterations-guide` },
   openGraph: {
-    title: 'The Essential Guide to Suit Alterations',
-    description: 'Which suit alterations are worth doing, which are not, and what every man should know before taking a suit to a tailor.',
+    title: post.title,
+    description: post.description,
     url: `${SITE_URL}/journal/suit-alterations-guide`,
     type: 'article',
-    images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp', width: 1200, height: 630, alt: 'The Essential Guide to Suit Alterations' }],
+    images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
   },
 };
 
 const ARTICLE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'The Essential Guide to Suit Alterations',
-  description: 'Which suit alterations are worth doing, which are not, and what every man should know before taking a suit to a tailor.',
-  image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp',
-  datePublished: '2024-01-20',
-  dateModified: '2024-01-20',
+  headline: post.title,
+  description: post.description,
+  image: post.image,
+  datePublished: post.datePublished,
+  dateModified: post.datePublished,
   author: {
     '@type': 'Person',
     name: 'Javier Bello',
@@ -39,17 +42,15 @@ const ARTICLE_SCHEMA = {
   mainEntityOfPage: `${SITE_URL}/journal/suit-alterations-guide`,
 };
 
-const BODY = '<h2>Alterations Worth Doing</h2><p>Trouser hemming is the most common and straightforward alteration. Jacket waist suppression transforms the silhouette of an ill-fitting jacket. Sleeve shortening is simple and effective.</p><h2>Alterations to Approach with Caution</h2><p>Shoulder alterations are complex and expensive. If the shoulders do not fit, it is usually better to find a different suit. Letting out seams is only possible if there is sufficient seam allowance in the original garment.</p><h2>What to Tell Your Tailor</h2><p>Describe how the garment feels, not just how it looks. Tell your tailor how you intend to wear the suit. A good tailor will ask these questions, but volunteering the information ensures the alterations serve your actual needs.</p><h2>The Cost of Alterations</h2><p>As a general rule, the cost of alterations should not exceed the value of the garment. If alterations would cost more than the suit is worth, it may be time to invest in a better suit.</p>';
-
 export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_SCHEMA) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }, { name: 'Suit Alterations Guide', path: '/journal/suit-alterations-guide' }])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumb([{ name: 'Journal', path: '/journal' }, { name: post.title, path: '/journal/suit-alterations-guide' }])) }} />
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '45vh' }}>
-          <div className="absolute inset-0" style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: `url(${post.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(5% 0 0 / 0.92) 0%, oklch(5% 0 0 / 0.4) 100%)' }} />
           <div className="relative z-10 max-w-[900px] mx-auto px-6 lg:px-8 py-16 w-full">
             <nav className="flex items-center gap-2 mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
@@ -57,15 +58,15 @@ export default function BlogPost() {
               <span style={{ color: 'oklch(45% 0.005 240)' }}>›</span>
               <Link href="/journal" className="no-underline" style={{ color: 'oklch(65% 0.005 240)' }}>Journal</Link>
               <span style={{ color: 'oklch(45% 0.005 240)' }}>›</span>
-              <span style={{ color: 'oklch(73% 0.08 75)' }}>Alterations</span>
+              <span style={{ color: 'oklch(73% 0.08 75)' }}>{post.category}</span>
             </nav>
-            <p className="text-eyebrow">Alterations</p>
+            <p className="text-eyebrow">{post.category}</p>
             <span className="gold-rule-left mt-3" />
             <h1 className="font-serif text-ivory mt-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 400, lineHeight: 1.15 }}>
-              The Essential Guide to Suit Alterations
+              {post.title}
             </h1>
             <p className="text-gray-bello mt-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.7rem', letterSpacing: '0.1em' }}>
-              By Javier Bello · January 20, 2024
+              By Javier Bello · {post.date}
             </p>
           </div>
         </section>
@@ -79,10 +80,10 @@ export default function BlogPost() {
                 lineHeight: 1.9,
                 color: 'oklch(65% 0.005 240)',
               }}
-              dangerouslySetInnerHTML={{ __html: BODY }}
+              dangerouslySetInnerHTML={{ __html: post.body }}
             />
             <div className="mt-16 pt-10" style={{ borderTop: '1px solid oklch(95% 0.01 85 / 0.08)' }}>
-              <p className="text-eyebrow mb-4">Ready to achieve the perfect fit?</p>
+              <p className="text-eyebrow mb-4">Ready to work with Javier?</p>
               <Link href="/booking" className="btn-gold inline-flex">
                 Book an Appointment
               </Link>

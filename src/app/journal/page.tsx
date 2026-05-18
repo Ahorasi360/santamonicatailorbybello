@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/bello/Navbar';
 import Footer from '@/components/bello/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SITE_URL, IMAGES, LOCAL_BUSINESS_SCHEMA } from '@/lib/constants';
 import { buildBreadcrumb } from '@/lib/breadcrumb';
 
@@ -47,7 +48,7 @@ export default function JournalPage() {
               {POSTS.map(({ slug, title, excerpt, date, img, category }) => (
                 <Link key={slug} href={`/journal/${slug}`} className="group block no-underline" style={{ border: '1px solid oklch(95% 0.01 85 / 0.07)', background: 'oklch(10% 0.005 240)' }}>
                   <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                    <img src={img} alt={title} loading="lazy" decoding="async" width={600} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <Image src={img} alt={title} width={600} height={400} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">

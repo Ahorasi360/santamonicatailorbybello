@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
 
 const PORTFOLIO = [
@@ -34,7 +35,7 @@ export default function HomePortfolio() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PORTFOLIO.map(({ img, label, sub }, i) => (
             <div key={label} className={`group relative overflow-hidden reveal reveal-delay-${i + 1}`} style={{ aspectRatio: '3/4' }}>
-              <img src={img} alt={label} loading="lazy" decoding="async" width={800} height={1000} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src={img} alt={label} width={800} height={1000} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(5% 0 0 / 0.8) 0%, transparent 50%)' }} />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '0.55rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'oklch(73% 0.08 75)' }}>{sub}</p>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Women's Tailoring & Alterations Santa Monica",
     description: 'Expert women',
     url: `${SITE_URL}/services/womens-tailoring-alterations`,
-    images: [{ url: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp', width: 1200, height: 630, alt: "Women's Tailoring & Alterations Santa Monica" }],
+    images: [{ url: '/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp', width: 1200, height: 630, alt: "Women's Tailoring & Alterations Santa Monica" }],
   },
 };
 
@@ -53,7 +53,7 @@ export default function ServicePage() {
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>
-          <div className="absolute inset-0" style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: `url(/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(5% 0 0 / 0.9) 0%, oklch(5% 0 0 / 0.4) 100%)' }} />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8 py-16">
             <nav className="flex items-center gap-2 mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>

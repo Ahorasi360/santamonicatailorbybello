@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Garment Care and Repairs Santa Monica',
     description: 'Expert garment care and repairs in Santa Monica. Restore, repair, and preserve your finest garments with the care they deserve.',
     url: `${SITE_URL}/services/garment-care-repairs`,
-    images: [{ url: '/bello-garment-care-new-SbkXJCFLwSVdvdacopbh6Y.webp', width: 1200, height: 630, alt: 'Garment Care and Repairs Santa Monica' }],
+    images: [{ url: '/bello-garment-care-new.webp', width: 1200, height: 630, alt: 'Garment Care and Repairs Santa Monica' }],
   },
 };
 
@@ -53,7 +53,7 @@ export default function ServicePage() {
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>
-          <div className="absolute inset-0" style={{ backgroundImage: `url(/bello-garment-care-new-SbkXJCFLwSVdvdacopbh6Y.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: `url(/bello-garment-care-new.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(5% 0 0 / 0.9) 0%, oklch(5% 0 0 / 0.4) 100%)' }} />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8 py-16">
             <nav className="flex items-center gap-2 mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>

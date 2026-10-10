@@ -20,7 +20,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Fit Guide',
     date: 'March 15, 2024',
     datePublished: '2024-03-15',
-    image: '/bello-custom-suits-new-3KsFwfc6jLqgK9QyGawHAT.webp',
+    image: '/bello-custom-suits-new.webp',
     description: 'The definitive guide to suit fit — shoulders, chest, waist, sleeves, trousers, collar, and the alterations that fix each. By master tailor Javier Bello.',
     body: `
 <p>After more than twenty years of tailoring on the Westside, I can tell you the single most common mistake people make when buying a suit: they look at the price tag, the fabric, and the brand, and they ignore the shoulders. Everything else — chest, waist, sleeves, trousers — can be altered. The shoulders cannot, not really. So we start there.</p>
@@ -67,7 +67,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Education',
     date: 'February 10, 2024',
     datePublished: '2024-02-10',
-    image: '/bello-alterations-new-mc4PxTfLgVaYSLUXguwEEu.webp',
+    image: '/bello-alterations-new.webp',
     description: 'The real differences between off-the-rack, made-to-measure, and bespoke tailoring — what each costs, when each makes sense, and which is right for you.',
     body: `
 <p>The terms "bespoke," "made-to-measure," and "custom" get thrown around interchangeably in marketing, and the result is that most clients walk into our studio confused about what they're actually buying. The differences are substantial — in price, in fit, in lead time, and in the relationship between you and the tailor. Worth understanding before you commit.</p>
@@ -106,7 +106,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Alterations',
     date: 'January 20, 2024',
     datePublished: '2024-01-20',
-    image: '/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp',
+    image: '/bello-portfolio-1-new.webp',
     description: 'Which suit alterations are worth doing, which require caution, and what every client should know before bringing a suit to a tailor.',
     body: `
 <p>Most off-the-rack suits need alterations. Even excellent ones. The question is not whether to alter, but what to alter, in what order, and to what degree. This guide covers what's worth doing, what to approach with caution, and what's usually a waste of money.</p>
@@ -148,7 +148,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Fabrics',
     date: 'December 5, 2023',
     datePublished: '2023-12-05',
-    image: '/bello-portfolio-3-new-KgqRQNqsNDPBPJV934SxTg.webp',
+    image: '/bello-portfolio-3-new.webp',
     description: 'A practical fabric guide for Los Angeles climate — wool weights, super numbers, top mills, and which fabrics work for which seasons and occasions.',
     body: `
 <p>The single biggest mistake I see in Los Angeles is clients buying suits built for New York. Heavy worsted wool, year-round 11oz fabric, suits intended for actual winter. They wear them twice and complain that suits are uncomfortable. They aren't — the wrong fabric is. This guide covers what to actually buy for our climate.</p>
@@ -197,7 +197,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Wedding',
     date: 'November 12, 2023',
     datePublished: '2023-11-12',
-    image: '/bello-wedding-new-PNcS2PsTMDqPHXCwBLpVrM.webp',
+    image: '/bello-wedding-new.webp',
     description: 'A practical wedding suit timeline — bespoke (4-6 months), made-to-measure (2-3 months), or alterations (6-8 weeks) — and what to bring to each fitting.',
     body: `
 <p>The biggest source of wedding-day suit problems is starting too late. Six weeks before the wedding is too late for bespoke. Three weeks is too late for any serious alterations. This guide covers what to start when, what to bring to fittings, and how to avoid the most common wedding tailoring mistakes.</p>
@@ -246,7 +246,7 @@ export const JOURNAL_POSTS: Record<string, JournalPost> = {
     category: 'Care',
     date: 'October 8, 2023',
     datePublished: '2023-10-08',
-    image: '/bello-garment-care-new-SbkXJCFLwSVdvdacopbh6Y.webp',
+    image: '/bello-garment-care-new.webp',
     description: 'How to store, clean, press, and maintain your suits so they last decades. Practical care guidance from twenty years of working on luxury garments.',
     body: `
 <p>A well-made suit can last twenty years or more. Most don't, because most clients don't know how to care for them. Heavy dry cleaning, wire hangers, no rotation, no brushing, no resting — and the suit that should have been a heirloom is worn out in three years. This guide covers what actually works.</p>

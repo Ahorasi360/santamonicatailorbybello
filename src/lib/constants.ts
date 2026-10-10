@@ -17,18 +17,18 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/santamonicatailor';
 export const YELP_URL = 'https://www.yelp.com/biz/santa-monica-tailor-by-bello-santa-monica-16';
 
 export const IMAGES = {
-  hero: '/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp',
-  hero2: '/bello-hero2-new-nDZxNhaZhZ69htr8fAZy5T.webp',
+  hero: '/bello-hero-new.webp',
+  hero2: '/bello-hero2-new.webp',
   javier: '/javier-bello.webp',
-  customSuits: '/bello-custom-suits-new-3KsFwfc6jLqgK9QyGawHAT.webp',
-  alterations: '/bello-alterations-new-mc4PxTfLgVaYSLUXguwEEu.webp',
-  wedding: '/bello-wedding-new-PNcS2PsTMDqPHXCwBLpVrM.webp',
-  garmentCare: '/bello-garment-care-new-SbkXJCFLwSVdvdacopbh6Y.webp',
-  portfolio1: '/bello-portfolio-1-new-LDifmq4hwGPCCWMpwrNrUu.webp',
-  portfolio2: '/bello-portfolio-2-new-EwJGzRgo5SAay7ZL9YDPvp.webp',
-  portfolio3: '/bello-portfolio-3-new-KgqRQNqsNDPBPJV934SxTg.webp',
-  bookingBg: '/bello-booking-bg-new-5wUWh9qDSgxVhz6RDzPgAV.webp',
-  feature: '/bello-feature-new-jjtM5FFDVUwJHTWMQwPbu7.webp',
+  customSuits: '/bello-custom-suits-new.webp',
+  alterations: '/bello-alterations-new.webp',
+  wedding: '/bello-wedding-new.webp',
+  garmentCare: '/bello-garment-care-new.webp',
+  portfolio1: '/bello-portfolio-1-new.webp',
+  portfolio2: '/bello-portfolio-2-new.webp',
+  portfolio3: '/bello-portfolio-3-new.webp',
+  bookingBg: '/bello-booking-bg-new.webp',
+  feature: '/bello-feature-new.webp',
 };
 
 export const SERVICES_LIST = [

@@ -3,7 +3,7 @@ import './globals.css';
 import ChatWidget from '@/components/bello/ChatWidget';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.santamonicatailorbybello.com';
-const OG_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663296530547/HiNwGCzzPXbrMcuD99ygxU/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp';
+const OG_IMAGE = '/bello-hero-new-KhZDc6CivnuzFN7S4bg9uJ.webp';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

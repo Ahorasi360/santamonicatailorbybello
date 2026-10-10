@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Suit Alterations Santa Monica',
     description: 'Professional suit alterations in Santa Monica. Jacket tapering, trouser hemming, sleeve shortening, and full suit resizing by master tailor Javier Bello.',
     url: `${SITE_URL}/services/suit-alterations-santa-monica`,
-    images: [{ url: '/bello-alterations-new-mc4PxTfLgVaYSLUXguwEEu.webp', width: 1200, height: 630, alt: 'Suit Alterations Santa Monica' }],
+    images: [{ url: '/bello-alterations-new.webp', width: 1200, height: 630, alt: 'Suit Alterations Santa Monica' }],
   },
 };
 
@@ -53,7 +53,7 @@ export default function ServicePage() {
       <Navbar />
       <main className="pt-[72px]">
         <section className="relative flex items-end overflow-hidden" style={{ minHeight: '50vh' }}>
-          <div className="absolute inset-0" style={{ backgroundImage: `url(/bello-alterations-new-mc4PxTfLgVaYSLUXguwEEu.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div className="absolute inset-0" style={{ backgroundImage: `url(/bello-alterations-new.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, oklch(5% 0 0 / 0.9) 0%, oklch(5% 0 0 / 0.4) 100%)' }} />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8 py-16">
             <nav className="flex items-center gap-2 mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
